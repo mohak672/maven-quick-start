@@ -2,7 +2,6 @@ package clinic.programming.training;
 
 import java.util.ArrayList;
 import java.util.List;
-import org.apache.commons.lang3.StringUtils;
 
 public class Application {
     
@@ -11,8 +10,11 @@ public class Application {
     }
 
     public int countWords(String word){
-        String[] wordsArr = StringUtils.split(word,' ');
-        return wordsArr == null ? 0 : wordsArr.length;
+        if(word == null || word.isEmpty()){
+            return 0;
+        }
+        String[] wordsArr = word.split(" ");
+        return (wordsArr == null) ? 0 : wordsArr.length;
     }
 
     public void print(){
